@@ -1,8 +1,5 @@
 name: Build and Deploy
 on:
-    # Nightly build
-    schedule:
-        - cron: "0 9 * * *"
     # Release build
     release:
         types: [published]
@@ -12,7 +9,7 @@ on:
             mode:
                 description: What type of build to trigger. Release builds MUST be ran from the `master` branch.
                 required: true
-                default: nightly
+                default: release
                 type: choice
                 options:
                     - nightly
@@ -36,7 +33,7 @@ on:
                 description: Deploy artifacts
                 required: true
                 type: boolean
-                default: true
+                default: false
 run-name: Element ${{ inputs.mode != 'release' && github.event_name != 'release' && 'Nightly' || 'Desktop' }}
 concurrency: ${{ github.workflow }}
 env:
