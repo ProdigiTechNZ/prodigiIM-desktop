@@ -2,7 +2,7 @@
     "name": "ProdigiIM-desktop",
     "productName": "ProdigiIM",
     "main": "lib/electron-main.js",
-    "version": "1.11.49",
+    "version": "v0.0.1",
     "description": "Prodigi IM Client",
     "author": "Prodigi",
     "homepage": "https://prodigi.nz",
