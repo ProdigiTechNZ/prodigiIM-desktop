@@ -85,7 +85,7 @@ jobs:
             - name: Check version
               id: package
               run: |
-                  echo "version=$(cat package.json | jq -r .version)" >> $GITHUB_OUTPUT
+                  echo "version=$(cat package.json | jq -r .prodigi_version)" >> $GITHUB_OUTPUT
 
             - name: "[Release] Fetch release"
               id: release
