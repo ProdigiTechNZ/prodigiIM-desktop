@@ -25,12 +25,7 @@ import { keytar } from "./keytar";
 import { getDisplayMediaCallback, setDisplayMediaCallback } from "./displayMediaCallback";
 
 ipcMain.on("setBadgeCount", function (_ev: IpcMainEvent, count: number): void {
-    if (process.platform !== "win32") {
-        // only set badgeCount on Mac/Linux, the docs say that only those platforms support it but turns out Electron
-        // has some Windows support too, and in some Windows environments this leads to two badges rendering atop
-        // each other. See https://github.com/vector-im/element-web/issues/16942
-        app.badgeCount = count;
-    }
+    app.badgeCount = count;
     if (count === 0) {
         global.mainWindow?.flashFrame(false);
     }

@@ -110,10 +110,6 @@ export function buildMenuTemplate(): Menu {
                     role: "togglefullscreen",
                     label: _t("view_menu|toggle_full_screen"),
                 },
-                {
-                    role: "toggleDevTools",
-                    label: _t("view_menu|toggle_developer_tools"),
-                },
             ],
         },
         {
@@ -241,11 +237,6 @@ export function buildMenuTemplate(): Menu {
             label: _t("file_menu|label"),
             accelerator: "f",
             submenu: [
-                // For some reason, 'about' does not seem to work on windows.
-                /*{
-                    role: 'about',
-                    label: _t('About'),
-                },*/
                 {
                     role: "quit",
                     label: _t("action|quit"),

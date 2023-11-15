@@ -48,13 +48,8 @@ const argv = minimist(process.argv, {
 
 if (argv["help"]) {
     console.log("Options:");
-    console.log("  --profile-dir {path}: Path to where to store the profile.");
-    console.log("  --profile {name}:     Name of alternate profile to use, allows for running multiple accounts.");
-    console.log("  --devtools:           Install and use react-devtools and react-perf.");
-    console.log("  --no-update:          Disable automatic updating.");
     console.log("  --hidden:             Start the application hidden in the system tray.");
     console.log("  --help:               Displays this help message.");
-    console.log("And more such as --proxy, see:" + "https://electronjs.org/docs/api/command-line-switches");
     app.exit();
 }
 
@@ -367,21 +362,6 @@ app.on("ready", async () => {
         // with node printing all sorts of stuff about unhandled exceptions
         // when we want the actual error to be as obvious as possible).
         return;
-    }
-
-    if (argv["devtools"]) {
-        try {
-            // eslint-disable-next-line @typescript-eslint/no-var-requires
-            const { default: installExt, REACT_DEVELOPER_TOOLS, REACT_PERF } = require("electron-devtools-installer");
-            installExt(REACT_DEVELOPER_TOOLS)
-                .then((name: string) => console.log(`Added Extension: ${name}`))
-                .catch((err: unknown) => console.log("An error occurred: ", err));
-            installExt(REACT_PERF)
-                .then((name: string) => console.log(`Added Extension: ${name}`))
-                .catch((err: unknown) => console.log("An error occurred: ", err));
-        } catch (e) {
-            console.log(e);
-        }
     }
 
     protocol.registerFileProtocol("vector", (request, callback) => {
