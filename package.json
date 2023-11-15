@@ -1,14 +1,14 @@
 {
-    "name": "element-desktop",
-    "productName": "Element",
+    "name": "ProdigiIM-desktop",
+    "productName": "ProdigiIM",
     "main": "lib/electron-main.js",
     "version": "1.11.49",
-    "description": "A feature-rich client for Matrix.org",
-    "author": "Element",
-    "homepage": "https://element.io",
+    "description": "Prodigi IM Client",
+    "author": "Prodigi",
+    "homepage": "https://prodigi.nz",
     "repository": {
         "type": "git",
-        "url": "https://github.com/vector-im/element-desktop"
+        "url": "ProdigiTechNZ/prodigiIM-desktop"
     },
     "license": "Apache-2.0",
     "files": [],
@@ -148,7 +148,7 @@
                 "deb"
             ],
             "category": "Network;InstantMessaging;Chat",
-            "maintainer": "support@element.io",
+            "maintainer": "support@prodigi.nz",
             "icon": "build/icons"
         },
         "deb": {
@@ -193,9 +193,9 @@
         },
         "protocols": [
             {
-                "name": "element",
+                "name": "prodigiim",
                 "schemes": [
-                    "element"
+                    "prodigiim"
                 ]
             }
         ]
